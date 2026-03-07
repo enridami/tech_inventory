@@ -42,19 +42,21 @@ def show_products(inventory):
         print("There are no products in inventory.")
         return
 
-    name_w  = max(len(p["name"])  for p in inventory)
-    brand_w = max(len(p["brand"]) for p in inventory)
+    name_w   = max(max(len(p["name"]) for p in inventory), len("Name"))
+    brand_w  = max(max(len(p["brand"]) for p in inventory), len("Brand"))
+    amount_w = max(max(len(str(p["amount"])) for p in inventory), len("Amount"))
+    price_w  = max(max(len(str(p["price"])) for p in inventory), len("Price"))
 
-    top    = f"╔════╦{'═'*(name_w+2)}╦{'═'*(brand_w+2)}╦══════════╦══════════╗"
-    header = f"║ ID ║ {'Name':<{name_w}} ║ {'Brand':<{brand_w}} ║ Amount   ║ Price    ║"
-    mid    = f"╠════╬{'═'*(name_w+2)}╬{'═'*(brand_w+2)}╬══════════╬══════════╣"
-    bot    = f"╚════╩{'═'*(name_w+2)}╩{'═'*(brand_w+2)}╩══════════╩══════════╝"
+    top    = f"╔════╦{'═'*(name_w+2)}╦{'═'*(brand_w+2)}╦{'═'*(amount_w+2)}╦{'═'*(price_w+2)}╗"
+    header = f"║ ID ║ {'Name':<{name_w}} ║ {'Brand':<{brand_w}} ║ {'Amount':<{amount_w}} ║ {'Price':<{price_w}} ║"
+    mid    = f"╠════╬{'═'*(name_w+2)}╬{'═'*(brand_w+2)}╬{'═'*(amount_w+2)}╬{'═'*(price_w+2)}╣"
+    bot    = f"╚════╩{'═'*(name_w+2)}╩{'═'*(brand_w+2)}╩{'═'*(amount_w+2)}╩{'═'*(price_w+2)}╝"
 
     print(top)
     print(header)
     print(mid)
     for p in inventory:
-        print(f"║ {p['id']:<3}║ {p['name']:<{name_w}} ║ {p['brand']:<{brand_w}} ║ {p['amount']:<9}║ {p['price']:<9}║")
+        print(f"║ {p['id']:<3}║ {p['name']:<{name_w}} ║ {p['brand']:<{brand_w}} ║ {p['amount']:<{amount_w}} ║ {p['price']:<{price_w}} ║")
     print(bot)
 
 

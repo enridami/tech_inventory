@@ -1,5 +1,6 @@
 # Tech Inventory System
-#### Video Demo <URL HERE>
+#### Video Demo: <https://youtu.be/lWgeOs6UAks>
+
 #### Description:
 
 ## Descripción General

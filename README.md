@@ -1,5 +1,6 @@
 # Tech Inventory System
-#### Video Demo: <https://youtu.be/lWgeOs6UAks>
+#### Video Demo:
+<video src="https://youtu.be/lWgeOs6UAks" width="100%"></video>
 
 #### Description:
 
